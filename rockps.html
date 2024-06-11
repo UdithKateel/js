@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>rps</title>
+
+</head>
+<body>
+    <button onclick="return game(0)" class="rock">rock</button>
+    <button onclick="return game(1)" class="paper">paper</button>
+    <button onclick="return game(2)" class="scissors">scissors</button>
+    <button class="reset" onclick="return reset()">reset</button>
+    <p class="choicees"></p>
+    <div class="status"></div>
+    <div class="scoreboard"></div>
+    <script>
+          let choices=["rock","paper","sciccor"]
+        let cs=0
+        let us=0
+        let x;
+        let result='';
+        function compchoice(){
+             x=Math.floor(Math.random()*3);
+            
+            console.log('compchoice is ',x)
+            return x;
+        }
+        function reset(){
+          
+            us=0
+            cs=0
+                        document.querySelector('.status').innerText=result
+            document.querySelector('.scoreboard').innerText="user"+us+"  "+"comp"+cs
+        }
+        function game(user){
+            let cc=compchoice()
+            if(cc===user){
+                result="draw"
+            }else if(user===0&&cc===2||user===1&&cc===0||user===2&&cc===1){
+                result="win"
+                us++;
+            }
+            else{
+                result="loss"
+                cs++
+            }
+            console.log(result)
+            document.querySelector('.status').innerText=result
+            document.querySelector('.scoreboard').innerText="user"+us+"  "+"comp"+cs
+            document.querySelector('.choicees').innerText= `you: ${choices[user]} comp: ${choices[cc]}`
+        }
+    </script>
+</body>
+</html>

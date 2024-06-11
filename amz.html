@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>amazon</title>
+    <style>
+        button{
+            border: 0;
+            padding: 10px;
+            font-size: large;
+            background-color: rgb(8, 144, 8);
+            color: white;
+             cursor: pointer;
+        }
+        #amount{
+            padding: 10px;
+            border-radius: 4px;
+           
+            
+        }
+    </style>
+  </head>
+  <body>
+    <p>orders under $40 +$10 delivery charges</p>
+    <p>orders above $40 + free delivery</p>
+    Enter the total payable amount :<input
+      type="number"
+      id="amount"
+      onkeydown="
+   handlekeyy()
+    "
+    />
+    <button  onclick="return calc()">calculate</button>
+    <p class="cash"></p>
+    <script>
+      function handlekeyy() {
+        if (event.key === "Enter") {
+          calc();
+        }
+      }
+      function calc() {
+        let x = document.getElementById("amount").value;
+        if (x > 40) {
+          document.querySelector(".cash").innerHTML = `payable is $ ${x}`;
+        } else {
+          document.querySelector(".cash").innerHTML = `payable is $ ${
+            parseInt(x) + 10
+          }`;
+        }
+      }
+    </script>
+  </body>
+</html>
