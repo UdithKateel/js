@@ -1,0 +1,50 @@
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: rgb(245, 233, 233);
+}
+input{
+    padding: 10px;
+    
+}
+button{
+    padding: 10px 15px 10px 15px;
+    width: 100px;
+    
+
+}
+h1{
+    text-align: center;
+}
+.llg{
+    
+    align-items: stretch;
+    justify-content: center;
+    background-color: rgb(222, 220, 220);
+    padding-top: 50px;
+    padding-bottom: 50px;
+    margin-left: 100px;
+    margin-right: 100px;
+    border-radius: 50px;
+}
+.ll,.llg    {
+    display: grid;
+    grid-template-columns:270px 228px 100px;
+    row-gap: 10px;
+    column-gap: 100px;
+   
+}
+div{
+    display: flex;
+    align-items: center;
+    
+}
+.Add{
+    background-color: rgb(17, 96, 17);
+    color: white;
+    border: none;
+}
+.del{
+    background-color: red;
+    color: white;
+    border: none;
+}
