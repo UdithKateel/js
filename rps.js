@@ -37,3 +37,19 @@ let choices=["rock","paper","scissors"]
                 Comp: <img src="${choices[cc]}-emoji.png" alt="${choices[cc]}">
             `;
         }
+        let isAUtoplay=false;
+        let interVal;
+        function auto(){
+           if(!isAUtoplay){
+           interVal= setInterval(() => {
+                let u=compchoice();
+            game(u)
+            }, 1000);
+            isAUtoplay=true
+
+        }
+        else{
+            clearInterval(interVal)
+            isAUtoplay=false
+        }
+    }

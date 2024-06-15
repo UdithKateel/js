@@ -23,7 +23,7 @@
             font-size: larger;
             margin-top: 60px;
         }
-        .reset{
+       .auto, .reset{
             padding: 10px;
             background-color: white;
             color: black;
